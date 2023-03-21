@@ -11,6 +11,9 @@
 **Please note that the included packages have not been productized, and that academia is the intended audience.**\
 **The packages are provided "as-is", and as such no more than limited support can be expected.**
 
+> :warning: **This package works only with the [abb_libegm](https://github.com/alessioprini/abb_libegm), [abb_librws](https://github.com/alessioprini/abb_librws), and [abb_egm_rws_managers](https://github.com/alessioprini/abb_egm_rws_managers) fork from the same author!**
+
+
 ## Overview
 
 ROS packages intended to ease interaction between ABB robot controllers and ROS-based systems, by providing *ready-to-run* ROS nodes.
