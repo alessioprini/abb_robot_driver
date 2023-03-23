@@ -110,6 +110,9 @@ elseif(CMAKE_CXX_COMPILER_ID MATCHES "MSVC")
   target_compile_options(${target_name} PRIVATE /W4)
 endif()
 
+target_compile_definitions(${target_name} PRIVATE BYPASS_AUTO_MODE)
+
+
 #-----------------------------
 # Executable target
 #-----------------------------

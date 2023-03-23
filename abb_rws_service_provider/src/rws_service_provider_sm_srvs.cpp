@@ -105,7 +105,9 @@ bool RWSServiceProvider::setEGMSettings(SetEGMSettings::Request& request, SetEGM
   // Verification
   //--------------------------
   if(!verifyArgumentRAPIDTask(request.task, response.result_code, response.message)) return true;
+#ifndef BYPASS_AUTO_MODE
   if(!verifyAutoMode(response.result_code, response.message)) return true;
+#endif
   if(!verifySMAddInRuntimeStates(response.result_code, response.message)) return true;
   if(!verifySMAddInTaskExist(request.task, response.result_code, response.message)) return true;
   if(!verifySMAddInTaskInitialized(request.task, response.result_code, response.message)) return true;
@@ -140,7 +142,9 @@ bool RWSServiceProvider::setRAPIDRoutine(SetRAPIDRoutine::Request& request, SetR
   // Verification
   //--------------------------
   if(!verifyArgumentRAPIDTask(request.task, response.result_code, response.message)) return true;
+#ifndef BYPASS_AUTO_MODE
   if(!verifyAutoMode(response.result_code, response.message)) return true;
+#endif
   if(!verifySMAddInRuntimeStates(response.result_code, response.message)) return true;
   if(!verifySMAddInTaskExist(request.task, response.result_code, response.message)) return true;
   if(!verifySMAddInTaskInitialized(request.task, response.result_code, response.message)) return true;
@@ -173,7 +177,9 @@ bool RWSServiceProvider::setSGCommand(SetSGCommand::Request& request, SetSGComma
   // Verification
   //--------------------------
   if(!verifyArgumentRAPIDTask(request.task, response.result_code, response.message)) return true;
+#ifndef BYPASS_AUTO_MODE
   if(!verifyAutoMode(response.result_code, response.message)) return true;
+#endif
   if(!verifySMAddInRuntimeStates(response.result_code, response.message)) return true;
   if(!verifySMAddInTaskExist(request.task, response.result_code, response.message)) return true;
   if(!verifySMAddInTaskInitialized(request.task, response.result_code, response.message)) return true;
@@ -224,7 +230,9 @@ bool RWSServiceProvider::runRAPIDRoutine(TriggerWithResultCode::Request&, Trigge
   //--------------------------
   // Verification
   //--------------------------
+#ifndef BYPASS_AUTO_MODE
   if(!verifyAutoMode(response.result_code, response.message)) return true;
+#endif
   if(!verifyRAPIDRunning(response.result_code, response.message)) return true;
   if(!verifySMAddInRuntimeStates(response.result_code, response.message)) return true;
   if(!verifyRWSManagerReady(response.result_code, response.message)) return true;
@@ -255,7 +263,9 @@ bool RWSServiceProvider::runSGRoutine(TriggerWithResultCode::Request&, TriggerWi
   //--------------------------
   // Verification
   //--------------------------
+#ifndef BYPASS_AUTO_MODE
   if(!verifyAutoMode(response.result_code, response.message)) return true;
+#endif
   if(!verifyRAPIDRunning(response.result_code, response.message)) return true;
   if(!verifySMAddInRuntimeStates(response.result_code, response.message)) return true;
   if(!verifyRWSManagerReady(response.result_code, response.message)) return true;
@@ -286,7 +296,9 @@ bool RWSServiceProvider::startEGMJoint(TriggerWithResultCode::Request&, TriggerW
   //--------------------------
   // Verification
   //--------------------------
+#ifndef BYPASS_AUTO_MODE
   if(!verifyAutoMode(response.result_code, response.message)) return true;
+#endif
   if(!verifyRAPIDRunning(response.result_code, response.message)) return true;
   if(!verifySMAddInRuntimeStates(response.result_code, response.message)) return true;
   if(!verifyRWSManagerReady(response.result_code, response.message)) return true;
@@ -317,7 +329,9 @@ bool RWSServiceProvider::startEGMPose(TriggerWithResultCode::Request&, TriggerWi
   //--------------------------
   // Verification
   //--------------------------
+#ifndef BYPASS_AUTO_MODE
   if(!verifyAutoMode(response.result_code, response.message)) return true;
+#endif
   if(!verifyRAPIDRunning(response.result_code, response.message)) return true;
   if(!verifySMAddInRuntimeStates(response.result_code, response.message)) return true;
   if(!verifyRWSManagerReady(response.result_code, response.message)) return true;
@@ -348,7 +362,9 @@ bool RWSServiceProvider::startEGMStream(TriggerWithResultCode::Request&, Trigger
   //--------------------------
   // Verification
   //--------------------------
+#ifndef BYPASS_AUTO_MODE
   if(!verifyAutoMode(response.result_code, response.message)) return true;
+#endif
   if(!verifyRAPIDRunning(response.result_code, response.message)) return true;
   if(!verifySMAddInRuntimeStates(response.result_code, response.message)) return true;
   if(!verifyRWSManagerReady(response.result_code, response.message)) return true;
@@ -379,7 +395,9 @@ bool RWSServiceProvider::stopEGM(TriggerWithResultCode::Request&, TriggerWithRes
   //--------------------------
   // Verification
   //--------------------------
+#ifndef BYPASS_AUTO_MODE
   if(!verifyAutoMode(response.result_code, response.message)) return true;
+#endif
   if(!verifyRAPIDRunning(response.result_code, response.message)) return true;
   if(!verifyRWSManagerReady(response.result_code, response.message)) return true;
 
@@ -409,7 +427,9 @@ bool RWSServiceProvider::stopEGMStream(TriggerWithResultCode::Request&, TriggerW
   //--------------------------
   // Verification
   //--------------------------
+#ifndef BYPASS_AUTO_MODE
   if(!verifyAutoMode(response.result_code, response.message)) return true;
+#endif
   if(!verifyRAPIDRunning(response.result_code, response.message)) return true;
   if(!verifyRWSManagerReady(response.result_code, response.message)) return true;
 
